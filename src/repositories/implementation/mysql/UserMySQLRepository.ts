@@ -9,7 +9,7 @@ class UserMySQLRepository implements UserRepository {
     password: string
   ): Promise<User | null> {
     const [rows]: any[] = await connection.execute(
-      `SELECT * FROM auth_user WHERE email = ${email} AND password=${password}`
+      `SELECT * FROM auth_user WHERE email = '${email}' AND password='${password}'`
     );
 
     if (rows.length) return userMapper(rows[0]);

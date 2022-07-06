@@ -11,6 +11,22 @@ class IdentityController extends BaseController {
     super();
   }
 
+  @route("/authenticate")
+  @POST()
+  async authenticate(request: Request, response: Response) {
+    try {
+      const { email, password } = request.body;
+      const authenticated = await this.userService.authenticate(
+        email,
+        password
+      );
+      response.status(StatusCodes.OK);
+      response.send(authenticated);
+    } catch (ex) {
+      this.handleException(ex, response);
+    }
+  }
+
   @route("/create")
   @POST()
   async create(request: Request, response: Response) {
