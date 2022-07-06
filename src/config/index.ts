@@ -9,7 +9,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || "development";
 const config: Config = {
   APP_ENV: process.env.APP_ENV,
   ENVIRONMENT: process.env.NODE_ENV,
-  PORT: parseInt(process.env.PORT || "3005", 10),
+  PORT: parseInt(process.env.PORT || "5000", 10),
   DATABASE: {
     HOST: process.env.MYSQL_HOST,
     USER: process.env.MYSQL_USER,

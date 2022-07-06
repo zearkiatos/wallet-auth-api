@@ -1,3 +1,3 @@
-import UserCreateDTO from "./UserCreateDto";
+import UserCreateDTO from "./UserCreateDTO";
 
 export { UserCreateDTO };

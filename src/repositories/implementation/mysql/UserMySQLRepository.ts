@@ -1,7 +1,7 @@
 import connection from "../../../persistence/MySqlPersistence";
 import User from "../../domain/User";
 import UserRepository from "../../UserRepository";
-import { userMapper } from '../Adapter/UserAdapter';
+import { userMapper } from "../Adapter/UserAdapter";
 
 class UserMySQLRepository implements UserRepository {
   public async findByEmailAndPassword(
@@ -17,9 +17,9 @@ class UserMySQLRepository implements UserRepository {
     return null;
   }
   public async store(entry: User): Promise<void> {
-    const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const now = new Date().toISOString().slice(0, 19).replace("T", " ");
     await connection.execute(
-      `INSERT INTO auth_user(email, password, created_at, updated_at) VALUES(${entry.email},${entry.password}, ${now}, ${now})`
+      `INSERT INTO auth_user(email, password, created_at, updated_at) VALUES('${entry.email}','${entry.password}', '${now}', '${now}')`
     );
   }
 }

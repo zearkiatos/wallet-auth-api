@@ -1,9 +1,9 @@
 interface User {
-  id: number;
+  id?: number;
   email: string;
   password: string;
-  createdAt: Date | null;
-  updatedAt: Date | null;
+  createdAt?: Date | null;
+  updatedAt?: Date | null;
 }
 
 export default User;
