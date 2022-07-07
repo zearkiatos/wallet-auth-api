@@ -5,7 +5,9 @@ abstract class BaseController {
   handleException(error: any, response: Response) {
     if (error instanceof ApplicationException) {
       response.status(StatusCodes.BAD_REQUEST);
-      response.send();
+      response.send({
+        errorMessage: error.message
+      });
     } else {
       throw new Error(error);
     }

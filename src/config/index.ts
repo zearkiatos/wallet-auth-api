@@ -16,7 +16,8 @@ const config: Config = {
     PASSWORD: process.env.MYSQL_PASSWORD,
     DATABASE: process.env.MYSQL_DATABASE,
     PORT: parseInt(process.env.MYSQL_PORT || "3306", 10)
-  }
+  },
+  JWT_SECRET_KEY: process.env.JWT_SECRET_KEY || ''
 
 };
 
