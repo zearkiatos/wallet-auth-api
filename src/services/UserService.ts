@@ -12,9 +12,9 @@ class UserService {
   public async authenticate(email: string, password: string): Promise<string> {
     const passwordCiphered = SHA("sha256").update(password).digest("base64");
 
-    const user: User = await this.userRepository.findByEmailAndPassword(
+    const user: User | null = await this.userRepository.findByEmailAndPassword(
       email,
-      password
+      passwordCiphered
     );
 
     if (config.JWT_SECRET_KEY) {

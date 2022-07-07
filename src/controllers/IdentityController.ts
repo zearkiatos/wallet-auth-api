@@ -16,12 +16,14 @@ class IdentityController extends BaseController {
   async authenticate(request: Request, response: Response) {
     try {
       const { email, password } = request.body;
-      const authenticated = await this.userService.authenticate(
+      const token = await this.userService.authenticate(
         email,
         password
       );
       response.status(StatusCodes.OK);
-      response.send(authenticated);
+      response.send({
+        token
+      });
     } catch (ex) {
       this.handleException(ex, response);
     }
