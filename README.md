@@ -2,6 +2,7 @@
 This is the authentication 🔑 microservice for a Wallet api 💵🤑built with TypeScript 🟦 and expressjs
 
 ![Github](https://github.com/zearkiatos/wallet-auth-api/actions/workflows/action.yml/badge.svg)
+![GitlabCI](https://gitlab.com/caprilespe/wallet-auth-api/badges/develop/pipeline.svg)
 
 # Make With
 
