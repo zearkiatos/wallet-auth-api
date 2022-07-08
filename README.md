@@ -1,6 +1,8 @@
 # Description
 This is the authentication 🔑 microservice for a Wallet api 💵🤑built with TypeScript 🟦 and expressjs
 
+![Github](https://github.com/zearkiatos/wallet-auth-api/actions/workflows/action.yml/badge.svg)
+
 # Make With
 
 [![JavaScript](https://img.shields.io/badge/javascript-ead547?style=for-the-badge&logo=javascript&logoColor=white&labelColor=000000)]()
