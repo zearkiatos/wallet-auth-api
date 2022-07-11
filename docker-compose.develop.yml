@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wallet-auth-api
+    env_file:
+      - .env
+    volumes: 
+      - ".:/usr/src/app"
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mysql
+    links: 
+      - mysql
+    networks:
+      devnetwork:
+  mysql:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: mysql.Dockerfile
+    container_name: wallet-auth-db
+    env_file:
+      - mysql.env
+    ports:
+      - "3308:3306"
+    volumes:
+      - "./mysql_volume:/var/lib/mysql"
+    networks:
+      devnetwork:
+networks:
+  devnetwork:
+    driver: bridge
+
